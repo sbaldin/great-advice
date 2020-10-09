@@ -1,4 +1,4 @@
-package com.github.sbaldin.greatadvice.parser
+package com.github.sbaldin.greatadvice.etl.extract.vk
 
 import okhttp3.OkHttpClient
 import java.security.SecureRandom

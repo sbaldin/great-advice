@@ -1,3 +1,4 @@
+drop schema fucking_great_advice cascade;
 create schema fucking_great_advice;
 
 alter schema fucking_great_advice owner to postgres;

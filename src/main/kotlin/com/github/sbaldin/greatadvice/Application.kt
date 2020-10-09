@@ -1,6 +1,11 @@
 package com.github.sbaldin.greatadvice
 
+import com.github.sbaldin.greatadvice.db.GreatAdviceRepo
 import com.github.sbaldin.greatadvice.domain.DatabaseConfig
+import com.github.sbaldin.greatadvice.etl.EtlRunner
+import com.github.sbaldin.greatadvice.etl.extract.site.GreatAdviceIterator
+import com.github.sbaldin.greatadvice.etl.extract.vk.VkAdviceUrlExtractor
+import com.github.sbaldin.greatadvice.etl.transform.AdviceUrlDownloader
 import com.uchuhimo.konf.Config
 import com.uchuhimo.konf.source.yaml
 import com.uchuhimo.konf.toValue
@@ -18,10 +23,26 @@ fun readDBConf(
 
 
 class Application {
+
+    fun start(){
+        log.info("Reading configurations.")
+        val dbConf = readDBConf()
+        log.info("Init DB.")
+        val repo = GreatAdviceRepo(dbConf)
+        repo.initialize()
+        log.info("Great Advice Helper Started.")
+        val etl = EtlRunner(
+            adviceUrlExtractor = VkAdviceUrlExtractor(),
+            adviceUrlDownloader = AdviceUrlDownloader(GreatAdviceIterator(startId = 1)),
+            repository = repo
+        )
+        etl.run()
+        log.info("Great Advice Helper Finished.")
+    }
 }
 
 
 fun main(args: Array<String>) {
-
+    Application().start()
 }
 

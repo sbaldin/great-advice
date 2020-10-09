@@ -3,7 +3,9 @@ package com.github.sbaldin.greatadvice.db
 import com.github.sbaldin.greatadvice.Application
 import com.github.sbaldin.greatadvice.domain.DatabaseConfig
 import com.github.sbaldin.greatadvice.domain.GreatAdvice
+import com.github.sbaldin.greatadvice.domain.GreatAdviceConclusion
 import com.github.sbaldin.greatadvice.readDBConf
+import com.google.gson.GsonBuilder
 import org.jetbrains.exposed.sql.*
 import org.jetbrains.exposed.sql.statements.InsertStatement
 import org.jetbrains.exposed.sql.transactions.transaction
@@ -15,7 +17,7 @@ val log: Logger = LoggerFactory.getLogger(GreatAdviceRepo::class.java)
 
 //TODO IMPROVE take a look to https://github.com/JetBrains/Exposed/wiki/DataBase-and-DataSource HikariDataSource
 class GreatAdviceRepo(
-    private val conf: DatabaseConfig = readDBConf()
+    private val conf: DatabaseConfig
 ) {
     private var isInitialized = false
     private val db by lazy {
@@ -23,8 +25,17 @@ class GreatAdviceRepo(
             Database.connect(url = url, driver = driver, user = user, password = password)
         }
     }
+    private val gson by lazy {
+        GsonBuilder()
+            .setLenient()
+            .create()
+    }
 
     fun initialize() {
+        if(isInitialized){
+            log.info("Initialization is already done.")
+            return
+        }
         if (conf.schema.createOnStartup) {
             val ddlScript = conf.schema.ddlScript.let {
                 if (it.isNotEmpty()) it else "schema-postgresql.sql"
@@ -49,11 +60,11 @@ class GreatAdviceRepo(
             it[text] = value.text
             it[html] = value.html
             it[tags] = value.tags.toTypedArray()
-            it[conclusions] = value.conclusions.toTypedArray()
+            it[conclusions] = value.conclusions.map { gson.toJson(it) }.toTypedArray()
         }
     }
 
-    fun butchInsert(values: Collection<GreatAdvice>, batchSize: Int = 100) =
+    fun butchInsert(values: Set<GreatAdvice>, batchSize: Int = 100) =
         values.chunked(batchSize).forEach { chunk ->
             transaction(db) {
                 addLogger(Slf4jSqlDebugLogger)
@@ -62,28 +73,50 @@ class GreatAdviceRepo(
                     this[GreatAdviceTable.text] = value.text
                     this[GreatAdviceTable.html] = value.html
                     this[GreatAdviceTable.tags] = value.tags.toTypedArray()
-                    this[GreatAdviceTable.conclusions] = value.conclusions.toTypedArray()
+                    this[GreatAdviceTable.conclusions] = value.conclusions.map { gson.toJson(it) }.toTypedArray()
                 }
             }
         }
 
     fun selectAll(): List<GreatAdvice> = transaction(db) {
         addLogger(Slf4jSqlDebugLogger)
-        GreatAdviceTable.selectAll()
-    }.map {
-        GreatAdvice(
-            id = it[GreatAdviceTable.id].toString(),
-            text = it[GreatAdviceTable.text],
-            html = it[GreatAdviceTable.html],
-            tags = it[GreatAdviceTable.tags].toList(),
-            conclusions = it[GreatAdviceTable.conclusions].toList()
-        )
+        GreatAdviceTable.selectAll().map {
+            GreatAdvice(
+                id = it[GreatAdviceTable.id].toString(),
+                text = it[GreatAdviceTable.text],
+                html = it[GreatAdviceTable.html],
+                tags = it[GreatAdviceTable.tags].toList(),
+                conclusions = it[GreatAdviceTable.conclusions].map {
+                    gson.fromJson(
+                        it,
+                        GreatAdviceConclusion::class.java
+                    )
+                }
+            )
+        }
     }
 
+    fun selectById(id: String): List<GreatAdvice> = transaction(db) {
+        addLogger(Slf4jSqlDebugLogger)
+        GreatAdviceTable.select { GreatAdviceTable.id.eq(id.toLong()) }.map {
+            GreatAdvice(
+                id = it[GreatAdviceTable.id].toString(),
+                text = it[GreatAdviceTable.text],
+                html = it[GreatAdviceTable.html],
+                tags = it[GreatAdviceTable.tags].toList(),
+                conclusions = it[GreatAdviceTable.conclusions].map {
+                    gson.fromJson(
+                        it,
+                        GreatAdviceConclusion::class.java
+                    )
+                }
+            )
+        }
+    }
 }
 
 
-object GreatAdviceTable : Table() {
+object GreatAdviceTable : Table("great_advice") {
     val id = long("id").autoIncrement("great_advice_id_seq")
     val text = varchar("text", 200)
     val html = varchar("html", 500)
