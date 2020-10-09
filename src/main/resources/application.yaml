@@ -4,7 +4,7 @@ datasource:
   user: "postgres"
   password: "passw0rd"
   schema:
-    createOnStartup: "false"
+    createOnStartup: "true"
     ddlScript: "schema-postgresql.sql"
 
 

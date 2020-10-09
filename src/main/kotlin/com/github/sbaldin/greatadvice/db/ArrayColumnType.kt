@@ -4,17 +4,22 @@ import org.jetbrains.exposed.sql.*
 import org.jetbrains.exposed.sql.statements.jdbc.JdbcConnectionImpl
 import org.jetbrains.exposed.sql.transactions.TransactionManager
 
-fun <T> Table.array(name: String, columnType: ColumnType): Column<Array<T>> = registerColumn(name, ArrayColumnType(columnType))
 
 /**
- * @See https://github.com/JetBrains/Exposed/issues/150
+ * @see  <a href="https://github.com/JetBrains/Exposed/issues/150">git issues</a>
  * @author MrPowerGamerBR
  */
+fun <T> Table.array(name: String, columnType: ColumnType): Column<Array<T>> = registerColumn(name, ArrayColumnType(columnType))
+
 class ArrayColumnType(private val type: ColumnType) : ColumnType() {
+
+    private val emptyArrayStub = "{}"
+
     override fun sqlType(): String = buildString {
         append(type.sqlType())
         append(" ARRAY")
     }
+
     override fun valueToDB(value: Any?): Any? {
         if (value is Array<*>) {
             val columnType = type.sqlType().split("(")[0]
@@ -24,6 +29,7 @@ class ArrayColumnType(private val type: ColumnType) : ColumnType() {
             return super.valueToDB(value)
         }
     }
+
     override fun valueFromDB(value: Any): Any {
         if (value is java.sql.Array) {
             return value.array
@@ -31,13 +37,21 @@ class ArrayColumnType(private val type: ColumnType) : ColumnType() {
         if (value is Array<*>) {
             return value
         }
+        if (value == emptyArrayStub) {
+            when(type){
+                is LongColumnType -> return arrayOf<Long>()
+                is TextColumnType -> return arrayOf<String>()
+                is StringColumnType ->  return arrayOf<String>()
+            }
+        }
         error("Array does not support for this database")
     }
+
 
     override fun notNullValueToDB(value: Any): Any {
         if (value is Array<*>) {
             if (value.isEmpty())
-                return "'{}'"
+                return "'$emptyArrayStub'"
 
             val columnType = type.sqlType().split("(")[0]
             val jdbcConnection = (TransactionManager.current().connection as JdbcConnectionImpl).connection

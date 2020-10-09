@@ -1,4 +1,6 @@
 import org.jetbrains.kotlin.gradle.tasks.KotlinCompile
+import kotlin.collections.mutableListOf
+import java.net.URI
 
 
 plugins {
@@ -15,8 +17,13 @@ noArg {
 
 
 group = "com.github.sbaldin"
-version = "0.0.1-SNAPSHOT"
+version = "0.1"
 java.sourceCompatibility = JavaVersion.VERSION_1_8
+
+application{
+    mainClassName = "com.github.sbaldin.greatadvice.ApplicationKt"
+}
+defaultTasks = mutableListOf("run")
 
 repositories {
     mavenCentral()
@@ -32,10 +39,8 @@ configurations {
 
 dependencies {
     implementation(kotlin("stdlib"))
-    implementation("io.projectreactor.kotlin:reactor-kotlin-extensions")
     implementation("org.jetbrains.kotlin:kotlin-reflect")
     implementation("org.jetbrains.kotlin:kotlin-stdlib-jdk8")
-    implementation("org.jetbrains.kotlinx:kotlinx-coroutines-reactor")
     implementation("com.squareup.retrofit2:retrofit:2.8.1")
     implementation("com.google.code.gson:gson:2.8.6")
     implementation("com.squareup.retrofit2:converter-gson:2.8.1")

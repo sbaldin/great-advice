@@ -7,16 +7,19 @@ data class GreatAdviceResponse(
 )
 
 
-@NoArg
-open class GreatAdvice constructor(
+//@NoArg
+data class GreatAdvice constructor(
     val id: String,
     val text: String,
     val html: String,
     val tags: List<String>,
-    val conclusions: List<String>
+    val conclusions: List<GreatAdviceConclusion>
 ) {
 
-    override fun toString(): String {
-        return "$id,'$text','$html','{${tags.joinToString { "''$it''" }}}','{${conclusions.joinToString { "''$it''" }}}'"
-    }
 }
+
+data class GreatAdviceConclusion (
+    val id: String,
+    val text: String,
+    val html: String
+)
