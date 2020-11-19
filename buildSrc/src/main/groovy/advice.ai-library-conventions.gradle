@@ -1,0 +1,18 @@
+description = 'DeepLearning4j Examples'
+
+plugins {
+    id 'advice.kotlin-common-conventions' // <1>
+
+    id 'java-library' // <2>
+}
+
+dependencies {
+    // https://mvnrepository.com/artifact/org.nd4j/nd4j-native-platform
+    implementation group: 'org.nd4j', name: 'nd4j-native-platform', version: '1.0.0-beta7'
+    // https://mvnrepository.com/artifact/org.deeplearning4j/deeplearning4j-core
+    implementation group: 'org.deeplearning4j', name: 'deeplearning4j-core', version: '1.0.0-beta7'
+    compile group: 'org.deeplearning4j', name: 'deeplearning4j-nlp', version:'1.0.0-beta7'
+    compile group: 'org.nd4j', name: 'nd4j-cuda-10.1-platform', version: '1.0.0-beta7'
+    compile group: 'org.apache.httpcomponents', name: 'httpclient', version:'4.3.6'
+    compile group: 'ch.qos.logback', name: 'logback-classic', version:'1.1.7'
+}

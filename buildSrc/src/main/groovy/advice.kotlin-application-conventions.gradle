@@ -1,0 +1,9 @@
+
+plugins {
+    id 'advice.kotlin-common-conventions' // <1>
+
+    id "application"
+    //id "com.github.johnrengelman.shadow"
+}
+
+

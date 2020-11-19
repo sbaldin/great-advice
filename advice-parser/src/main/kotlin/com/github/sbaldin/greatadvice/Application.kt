@@ -26,6 +26,9 @@ class Application {
 
     fun start(){
         log.info("Reading configurations.")
+        println("User dir:" + System.getProperty("user.dir"))
+        val executionPath = System.getProperty("user.dir")
+        println("Executing at =>" + executionPath.replace("\\", "/"))
         val dbConf = readDBConf()
         log.info("Init DB.")
         val repo = GreatAdviceRepo(dbConf)

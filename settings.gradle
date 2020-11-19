@@ -1,0 +1,2 @@
+rootProject.name = "advice"
+include("advice-ai", "advice-parser", "advice-core")

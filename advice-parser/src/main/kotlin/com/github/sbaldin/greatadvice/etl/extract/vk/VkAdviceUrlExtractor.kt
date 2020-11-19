@@ -85,7 +85,7 @@ class VkAdviceUrlExtractor {
     companion object {
         // let's assume that wall contain at least 100 posts
         private const val INITIAL_OFFSET: Int = 100
-        private const val OATH_TOKEN: String = "3e6a8a14407c2f84d7aa8597fac2fb9daab56aec2a11d2dda703be8efd3bfe18e3f55efa4fb5424628c65"
+        private const val OATH_TOKEN: String = "89c1a2231bacc4deff76eb801c67ab83cf032a98699e556631bf947134deabfafb617be6d9ec06f0e3fb5"
         private const val USER_ID: Int = 13499857
         private const val APP_ID: Int = 7508458
     }
