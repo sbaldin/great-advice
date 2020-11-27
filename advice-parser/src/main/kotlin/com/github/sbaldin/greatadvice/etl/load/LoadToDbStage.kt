@@ -6,7 +6,7 @@ import com.github.sbaldin.greatadvice.etl.transform.DownloadAdviceResult
 import org.apache.commons.logging.Log
 import org.apache.commons.logging.LogFactory
 
-private val log: Log = LogFactory.getLog(LoadToDbStage::class.java)
+private val log: Log = LogFactory.getLog(LoadToFile::class.java)
 
 class LoadToDbStage(val repo: GreatAdviceRepo) : LastStage<DownloadAdviceResult> {
 

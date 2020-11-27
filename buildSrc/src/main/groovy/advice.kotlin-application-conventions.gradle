@@ -7,3 +7,8 @@ plugins {
 }
 
 
+dependencies {
+    implementation("com.uchuhimo:konf-core:0.20.0")
+    implementation("com.uchuhimo:konf-yaml:0.20.0")
+}
+

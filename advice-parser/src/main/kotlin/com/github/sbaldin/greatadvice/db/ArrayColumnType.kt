@@ -1,5 +1,6 @@
 package com.github.sbaldin.greatadvice.db
 
+import com.github.sbaldin.greatadvice.domain.GreatAdvice
 import org.jetbrains.exposed.sql.*
 import org.jetbrains.exposed.sql.statements.jdbc.JdbcConnectionImpl
 import org.jetbrains.exposed.sql.transactions.TransactionManager
@@ -42,9 +43,12 @@ class ArrayColumnType(private val type: ColumnType) : ColumnType() {
                 is LongColumnType -> return arrayOf<Long>()
                 is TextColumnType -> return arrayOf<String>()
                 is StringColumnType ->  return arrayOf<String>()
+                is StringColumnType ->  return arrayOf<String>()
             }
         }
-        error("Array does not support for this database")
+        log.warn("Array does not support for this database")
+        return arrayOf<GreatAdvice>()
+        //error("Array does not support for this database")
     }
 
 
