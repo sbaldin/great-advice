@@ -1,5 +1,6 @@
 plugins {
     id 'advice.kotlin-application-conventions'
+    id 'advice.ai-library-conventions'
 }
 
 dependencies {
