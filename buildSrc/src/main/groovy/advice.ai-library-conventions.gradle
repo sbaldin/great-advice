@@ -12,5 +12,5 @@ dependencies {
     compile group: 'org.nd4j', name: 'nd4j-cuda-10.1-platform', version: '1.0.0-beta7'
     compile group: 'org.apache.httpcomponents', name: 'httpclient', version:'4.3.6'
     compile group: 'ch.qos.logback', name: 'logback-classic', version:'1.1.7'
-    compile group: 'ru.stachek66.nlp', name: 'mystem-scala', version:'0.1.4'
+    compile group: 'ru.stachek66.nlp', name: 'mystem-scala', version:'0.1.6'
 }

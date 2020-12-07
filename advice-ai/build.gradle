@@ -1,3 +1,12 @@
+buildscript {
+    repositories {
+        jcenter()
+    }
+    dependencies {
+        classpath 'com.github.jengelman.gradle.plugins:shadow:6.1.0'
+    }
+}
+
 plugins {
     id 'advice.kotlin-application-conventions'
     id 'advice.ai-library-conventions'
@@ -7,11 +16,14 @@ dependencies {
     implementation project(':advice-core')
 }
 
-application {
-    mainClass = 'com.github.sbaldin.greatadvice.ApplicationKt' // <1>
-}
 
-/*
-group 'com.github.sbaldin'
-version '0.4.2'
-defaultTasks 'run'*/
+group = "com.github.sbaldin"
+version = "0.3"
+mainClassName = 'com.github.sbaldin.greatadvice.ai.ApplicationKt' // <1>
+
+apply plugin: 'com.github.johnrengelman.shadow'
+shadowJar {
+    manifest {
+        attributes 'Main-Class': mainClassName
+    }
+}
