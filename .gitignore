@@ -31,3 +31,12 @@ gen
 
 # virtual machine crash logs, see http://www.java.com/en/download/help/error_hotspot.xml
 hs_err_pid*
+/advice-core/build/
+/advice-parser/build/
+/advice-rest/build/
+/buildSrc/build
+/advice-ai/build/
+/advice-parser/logs/
+
+/.gradle/
+/buildSrc/.gradle
