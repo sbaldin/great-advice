@@ -1,0 +1,45 @@
+plugins {
+    id 'advice.kotlin-application-rest'
+    id"org.springframework.boot" version "2.7.4"
+    id"io.spring.dependency-management" version "1.0.14.RELEASE"
+    id "org.jetbrains.kotlin.plugin.spring" version "1.6.21"
+    id "org.jetbrains.kotlin.plugin.jpa" version "1.6.21"
+}
+
+group = "com.github.sbaldin"
+version = "0.1"
+
+dependencies {
+    implementation project(':advice-core')
+    implementation("org.springframework.boot:spring-boot-starter-data-jpa")
+    implementation("org.springframework.boot:spring-boot-starter-web")
+    implementation("com.fasterxml.jackson.module:jackson-module-kotlin")
+
+
+}
+/*
+As we use spring we don't need a mainclass here
+
+mainClassName = "com.github.sbaldin.greatadvice.rest.ApplicationKt"
+
+shadowJar {
+    manifest {
+        attributes 'Main-Class': mainClassName
+    }
+}*/
+
+sourceSets {
+    integrationTest {
+        kotlin {
+            compileClasspath += main.output + test.output
+            runtimeClasspath += main.output + test.output
+            srcDir "$projectDir/src/integration-test/kotlin"
+        }
+        resources.srcDir "$projectDir/src/integration-test/resources"
+    }
+}
+
+
+test {
+    useJUnitPlatform()
+}
