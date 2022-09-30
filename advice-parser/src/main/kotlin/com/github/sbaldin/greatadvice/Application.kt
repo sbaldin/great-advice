@@ -12,7 +12,6 @@ import com.uchuhimo.konf.source.yaml
 import com.uchuhimo.konf.toValue
 import org.slf4j.Logger
 import org.slf4j.LoggerFactory
-import java.nio.file.FileSystems
 
 val log: Logger = LoggerFactory.getLogger(Application::class.java)
 
@@ -53,10 +52,23 @@ class Application {
         etl.run()
         log.info("Great Advice Helper Finished.")
     }
+
+    fun initDB(){
+        log.info("Reading configurations.")
+        println("User dir:" + System.getProperty("user.dir"))
+        val executionPath = System.getProperty("user.dir")
+        println("Executing at =>" + executionPath.replace("\\", "/"))
+        val dbConf = readDBConf()
+        log.info("Init DB.")
+        val repo = GreatAdviceRepo(dbConf)
+        repo.initialize()
+        log.info("Great Advice Helper Started.")
+
+    }
 }
 
 
 fun main(args: Array<String>) {
-    Application().exportToCsv()
+    Application().initDB()
 }
 

@@ -1,17 +1,3 @@
-create table great_advice
-(
-    id          serial not null
-        constraint great_advice_pkey
-            primary key,
-    text        varchar(255),
-    html        varchar(500),
-    tags        text[],
-    conclusions text
-);
-
-alter table great_advice
-    owner to postgres;
-
 INSERT INTO fucking_great_advice.great_advice (id, text, html, tags, conclusions) VALUES (938, 'Научись блять готовить!', 'Научись<br>блять<br>готовить!', '{coding,markup,education,life,for-him,for-her,office,love}', '{}');
 INSERT INTO fucking_great_advice.great_advice (id, text, html, tags, conclusions) VALUES (4727, 'Не засиживайся блять на работе!', 'Не&nbsp;засиживайся<br>блять<br>на&nbsp;работе!', '{design,coding,markup,text,life,business,frontend,office,gtd,health}', '{}');
 INSERT INTO fucking_great_advice.great_advice (id, text, html, tags, conclusions) VALUES (107, 'Делись блять знаниями!', 'Делись<br>блять<br>знаниями!', '{life,business,office,gtd}', '{}');
@@ -246,7 +232,7 @@ INSERT INTO fucking_great_advice.great_advice (id, text, html, tags, conclusions
 INSERT INTO fucking_great_advice.great_advice (id, text, html, tags, conclusions) VALUES (2078, 'Сделай блять уборку!', 'Сделай<br>блять<br>уборку!', '{life}', '{}');
 INSERT INTO fucking_great_advice.great_advice (id, text, html, tags, conclusions) VALUES (101, 'Читай больше, ёпта!', 'Читай<br>больше,<br><span class="heighten">ёпта!</span>', '{coding,text,education,life,business,gtd}', '{}');
 INSERT INTO fucking_great_advice.great_advice (id, text, html, tags, conclusions) VALUES (104, 'Записывай блять свои мысли!', 'Записывай<br>блять<br>свои<br>мысли!', '{design,coding,text,music,life,business,gtd}', '{}');
-INSERT INTO fucking_great_advice.great_advice (id, text, html, tags, conclusions) VALUES (5938, 'Признавай блять свои ошибки!', 'Признавай<br>блять<br>свои<br>ошибки!', '', '{}');
+INSERT INTO fucking_great_advice.great_advice (id, text, html, tags, conclusions) VALUES (5938, 'Признавай блять свои ошибки!', 'Признавай<br>блять<br>свои<br>ошибки!', '{}', '{}');
 INSERT INTO fucking_great_advice.great_advice (id, text, html, tags, conclusions) VALUES (6, 'Заставляй блять себя!', 'Заставляй<br>блять<br>себя!', '{life}', '{}');
 INSERT INTO fucking_great_advice.great_advice (id, text, html, tags, conclusions) VALUES (788, 'Сначала блять подготовься!', 'Сначала<br>блять<br>подготовься!', '{design,coding,markup,text,education,life,snowboard,travel}', '{}');
 INSERT INTO fucking_great_advice.great_advice (id, text, html, tags, conclusions) VALUES (155, 'Не ограничивайся блять профессией!', 'Не&nbsp;ограничивайся<br>блять<br>профессией!', '{design,coding,markup,marketing,seo,life,business,office,gtd,kids,dentist}', '{}');
@@ -272,15 +258,15 @@ INSERT INTO fucking_great_advice.great_advice (id, text, html, tags, conclusions
 INSERT INTO fucking_great_advice.great_advice (id, text, html, tags, conclusions) VALUES (8088, 'Собирайся блять заранее!', 'Собирайся<br>блять<br>заранее!', '{education,life,for-him,for-her,gtd,travel}', '{}');
 INSERT INTO fucking_great_advice.great_advice (id, text, html, tags, conclusions) VALUES (328, 'Расставь блять заголовки!', 'Расставь<br>блять<br>заголовки!', '{design,markup,text,frontend}', '{}');
 INSERT INTO fucking_great_advice.great_advice (id, text, html, tags, conclusions) VALUES (140, 'Не экономь блять на важном!', 'Не&nbsp;экономь<br>блять<br>на&nbsp;важном!', '{design,photo,marketing,seo,driving,life,business,gtd,money,health}', '{}');
-INSERT INTO fucking_great_advice.great_advice (id, text, html, tags, conclusions) VALUES (10918, 'Сначала блять проверь сам!', 'Сначала<br>блять<br>проверь<br>сам!', '', '{}');
+INSERT INTO fucking_great_advice.great_advice (id, text, html, tags, conclusions) VALUES (10918, 'Сначала блять проверь сам!', 'Сначала<br>блять<br>проверь<br>сам!', '{}', '{}');
 INSERT INTO fucking_great_advice.great_advice (id, text, html, tags, conclusions) VALUES (150, 'Учись блять задавать вопросы!', 'Учись<br>блять<br>задавать<br>вопросы!', '{life,business,gtd,love,kids}', '{}');
 INSERT INTO fucking_great_advice.great_advice (id, text, html, tags, conclusions) VALUES (948, 'Делай блять перерывы!', 'Делай<br>блять<br>перерывы!', '{coding,life,frontend,office,gtd}', '{}');
 INSERT INTO fucking_great_advice.great_advice (id, text, html, tags, conclusions) VALUES (73, 'Будь эффективнее, блять!', 'Будь<br>эффективнее,<br>блять!', '{coding,medicine,education,life,business,frontend,gtd,money}', '{}');
-INSERT INTO fucking_great_advice.great_advice (id, text, html, tags, conclusions) VALUES (24967, 'Трекай блять прогресс!', 'Трекай<br>блять<br>прогресс!', '', '{}');
+INSERT INTO fucking_great_advice.great_advice (id, text, html, tags, conclusions) VALUES (24967, 'Трекай блять прогресс!', 'Трекай<br>блять<br>прогресс!', '{}', '{}');
 INSERT INTO fucking_great_advice.great_advice (id, text, html, tags, conclusions) VALUES (100, 'Развивай блять мышление!', 'Развивай<br/>блять<br/>мышление!', '{design,coding,education,life,business,office,gtd,kids}', '{}');
 INSERT INTO fucking_great_advice.great_advice (id, text, html, tags, conclusions) VALUES (9147, 'Рискуй, ёпта!', 'Рискуй,<br><span class="heighten">ёпта!</span>', '{music,education,life,for-him,business,gtd,friendship}', '{}');
 INSERT INTO fucking_great_advice.great_advice (id, text, html, tags, conclusions) VALUES (6568, 'Следи блять за трендами!', 'Следи<br>блять<br>трендами!', '{design,coding,markup,marketing,frontend}', '{}');
-INSERT INTO fucking_great_advice.great_advice (id, text, html, tags, conclusions) VALUES (19807, 'Доводи блять до результата!', 'Доводи<br>блять<br>до результата!', '', '{}');
+INSERT INTO fucking_great_advice.great_advice (id, text, html, tags, conclusions) VALUES (19807, 'Доводи блять до результата!', 'Доводи<br>блять<br>до результата!', '{}', '{}');
 INSERT INTO fucking_great_advice.great_advice (id, text, html, tags, conclusions) VALUES (14797, 'Не усложняй жизнь, ёпта!', 'Не&nbsp;усложняй<br>жизнь,<br><span class="heighten">ёпта!</span>', '{life,business,office,gtd,love,travel,health}', '{}');
 INSERT INTO fucking_great_advice.great_advice (id, text, html, tags, conclusions) VALUES (131, 'Планируй блять день!', 'Планируй<br>блять<br>день!', '{education,life,business,office,gtd}', '{}');
 INSERT INTO fucking_great_advice.great_advice (id, text, html, tags, conclusions) VALUES (6628, 'Не бойся блять просить помощь!', 'Не&nbsp;бойся<br>блять<br>просить<br>помощь!', '{driving,education,life}', '{}');
@@ -290,7 +276,7 @@ INSERT INTO fucking_great_advice.great_advice (id, text, html, tags, conclusions
 INSERT INTO fucking_great_advice.great_advice (id, text, html, tags, conclusions) VALUES (122, 'Ищи блять наставника!', 'Ищи<br>блять<br>наставника!', '{life,business}', '{}');
 INSERT INTO fucking_great_advice.great_advice (id, text, html, tags, conclusions) VALUES (143, 'Выполняй блять обещанное!', 'Выполняй<br>блять<br>обещанное!', '{tricks,life,business,gtd,friendship}', '{}');
 INSERT INTO fucking_great_advice.great_advice (id, text, html, tags, conclusions) VALUES (22777, 'Опережай, ёпта!', 'Опережай,<br><span class="heighten">ёпта!</span>', '{medicine,education,life,business,snowboard,gtd,friendship}', '{}');
-INSERT INTO fucking_great_advice.great_advice (id, text, html, tags, conclusions) VALUES (6958, 'Переспрашивай, блять!', 'Переспрашивай,<br>блять!', '', '{}');
+INSERT INTO fucking_great_advice.great_advice (id, text, html, tags, conclusions) VALUES (6958, 'Переспрашивай, блять!', 'Переспрашивай,<br>блять!', '{}', '{}');
 INSERT INTO fucking_great_advice.great_advice (id, text, html, tags, conclusions) VALUES (288, 'Выясни блять интерес клиента!', 'Выясни<br>блять<br>интерес<br>клиента!', '{design,text,business,money}', '{}');
 INSERT INTO fucking_great_advice.great_advice (id, text, html, tags, conclusions) VALUES (4747, 'Говори блять своими словами!', 'Говори<br>блять<br>своими<br>словами!', '{coding,markup,photo,text,music,education,life,frontend}', '{}');
 INSERT INTO fucking_great_advice.great_advice (id, text, html, tags, conclusions) VALUES (7968, 'Прояви блять инициативу!', 'Прояви<br>блять<br>инициативу!', '{design,coding,marketing,education,life,office,gtd,friendship}', '{}');
@@ -299,7 +285,7 @@ INSERT INTO fucking_great_advice.great_advice (id, text, html, tags, conclusions
 INSERT INTO fucking_great_advice.great_advice (id, text, html, tags, conclusions) VALUES (13478, 'Возьми блять и уеби!', 'Возьми<br>блять<br>и&nbsp;уеби!', '{education,business,gtd}', '{}');
 INSERT INTO fucking_great_advice.great_advice (id, text, html, tags, conclusions) VALUES (25885, 'Уважаешь человека — скажи ему, ёпта!', 'Уважаешь<br><span class="dash">человека&nbsp;—</span><br>скажи ему,<br><span class="heighten">ёпта!</span>', '{life,business,office,gtd,money,friendship}', '{}');
 INSERT INTO fucking_great_advice.great_advice (id, text, html, tags, conclusions) VALUES (26131, 'Просто начни, ёпта!', 'Просто<br>начни,<br><span class="heighten">ёпта!</span>', '{life,business,snowboard,gtd}', '{}');
-INSERT INTO fucking_great_advice.great_advice (id, text, html, tags, conclusions) VALUES (26360, 'Инвестируй в себя, блять!', 'Инвестируй<br/>в&nbsp;себя,<br/>блять!', '', '{}');
+INSERT INTO fucking_great_advice.great_advice (id, text, html, tags, conclusions) VALUES (26360, 'Инвестируй в себя, блять!', 'Инвестируй<br/>в&nbsp;себя,<br/>блять!', '{}', '{}');
 INSERT INTO fucking_great_advice.great_advice (id, text, html, tags, conclusions) VALUES (18237, 'Не сиди блять сложа жопу!', 'Не&nbsp;сиди<br>блять<br>сложа<br>жопу!', '{life,gtd,health}', '{}');
 INSERT INTO fucking_great_advice.great_advice (id, text, html, tags, conclusions) VALUES (25887, 'Посылай в пизду и забывай нахуй!', 'Посылай<br>в&nbsp;пизду<br>и&nbsp;забывай<br><span class="heighten">нахуй!</span>', '{life,business,office,gtd,money,friendship}', '{}');
 INSERT INTO fucking_great_advice.great_advice (id, text, html, tags, conclusions) VALUES (1048, 'Оторви уже блять жопу!', 'Оторви<br>уже<br>блять<br>жопу!', '{life,gtd}', '{}');
@@ -310,7 +296,7 @@ INSERT INTO fucking_great_advice.great_advice (id, text, html, tags, conclusions
 INSERT INTO fucking_great_advice.great_advice (id, text, html, tags, conclusions) VALUES (6718, 'Подготовься блять к переговорам!', 'Подготовься<br>блять<br>к&nbsp;переговорам!', '{design,coding,markup,text,marketing,life,business}', '{}');
 INSERT INTO fucking_great_advice.great_advice (id, text, html, tags, conclusions) VALUES (26128, 'Дохуя планируешь — нихуя не успеешь!', 'Дохуя<br>планируешь&nbsp;—<br>нихуя<br>не&nbsp;успеешь!', '{education,life,newyear,business,office,gtd,money,travel}', '{}');
 INSERT INTO fucking_great_advice.great_advice (id, text, html, tags, conclusions) VALUES (26125, 'Не дёргайся из-за хуйни!', 'Не&nbsp;дёргайся<br><span class="heighten">из-за хуйни!</span>', '{life,for-her,gtd,love,money,friendship,health}', '{}');
-INSERT INTO fucking_great_advice.great_advice (id, text, html, tags, conclusions) VALUES (7958, 'Начни с себя, ёпта!', 'Начни<br>с&nbsp;себя,<br><span class="heighten">ёпта!</span>', '', '{}');
+INSERT INTO fucking_great_advice.great_advice (id, text, html, tags, conclusions) VALUES (7958, 'Начни с себя, ёпта!', 'Начни<br>с&nbsp;себя,<br><span class="heighten">ёпта!</span>', '{}', '{}');
 INSERT INTO fucking_great_advice.great_advice (id, text, html, tags, conclusions) VALUES (25915, 'Давай вывози, блять, ты можешь!', 'Давай<br>вывози,<br>блять,<br>ты можешь!', '{life,business,office,gtd}', '{}');
 INSERT INTO fucking_great_advice.great_advice (id, text, html, tags, conclusions) VALUES (2197, 'Не читай блять чужих писем!', 'Не&nbsp;читай<br>блять<br>чужих<br>писем!', '{life,for-him,for-her,love,friendship}', '{}');
 INSERT INTO fucking_great_advice.great_advice (id, text, html, tags, conclusions) VALUES (106, 'Работай блять честно!', 'Работай<br>блять<br>честно!', '{life,business,office}', '{}');
@@ -323,11 +309,11 @@ INSERT INTO fucking_great_advice.great_advice (id, text, html, tags, conclusions
 INSERT INTO fucking_great_advice.great_advice (id, text, html, tags, conclusions) VALUES (7528, 'Договаривайся блять на берегу!', 'Договаривайся<br>блять<br>на&nbsp;берегу!', '{life,business,gtd,love,money,friendship}', '{}');
 INSERT INTO fucking_great_advice.great_advice (id, text, html, tags, conclusions) VALUES (2607, 'Не понял — переспроси, блять!', 'Не&nbsp;понял&nbsp;—<br>переспроси,<br>блять!', '{education}', '{}');
 INSERT INTO fucking_great_advice.great_advice (id, text, html, tags, conclusions) VALUES (26123, 'Сохраняй блять спокойствие!', 'Сохраняй<br>блять<br>спокойствие!', '{life,gtd,love,money,friendship}', '{}');
-INSERT INTO fucking_great_advice.great_advice (id, text, html, tags, conclusions) VALUES (26368, 'Заканчивай блять начинать, начинай блять заканчивать!', 'Заканчивай<br/>блять<br/>начинать,<br/><span class="heighten">начинай</span><br/>блять<br/>заканчивать!', '', '{}');
+INSERT INTO fucking_great_advice.great_advice (id, text, html, tags, conclusions) VALUES (26368, 'Заканчивай блять начинать, начинай блять заканчивать!', 'Заканчивай<br/>блять<br/>начинать,<br/><span class="heighten">начинай</span><br/>блять<br/>заканчивать!', '{}', '{}');
 INSERT INTO fucking_great_advice.great_advice (id, text, html, tags, conclusions) VALUES (26066, 'Не знаешь — не пизди!', '<span class="dash">Не&nbsp;знаешь —</span><br>не&nbsp;пизди!', '{life,for-him,for-her,business,office,gtd,love,friendship}', '{}');
 INSERT INTO fucking_great_advice.great_advice (id, text, html, tags, conclusions) VALUES (8977, 'Решайся блять быстрее!', 'Решайся<br>блять<br>быстрее!', '{life,business,gtd,love}', '{}');
 INSERT INTO fucking_great_advice.great_advice (id, text, html, tags, conclusions) VALUES (26073, 'Доводи блять до конца!', 'Доводи<br>блять<br>до&nbsp;конца!', '{life,for-him,business,gtd}', '{}');
-INSERT INTO fucking_great_advice.great_advice (id, text, html, tags, conclusions) VALUES (26364, 'Делай блять больше подходов!', 'Делай<br>блять<br>больше<br>подходов!', '', '{}');
+INSERT INTO fucking_great_advice.great_advice (id, text, html, tags, conclusions) VALUES (26364, 'Делай блять больше подходов!', 'Делай<br>блять<br>больше<br>подходов!', '{}', '{}');
 INSERT INTO fucking_great_advice.great_advice (id, text, html, tags, conclusions) VALUES (19557, 'Двигайся дальше, ёпта!', 'Двигайся<br>дальше,<br><span class="heighten">епта!</span>', '{life,business,love,friendship}', '{}');
 INSERT INTO fucking_great_advice.great_advice (id, text, html, tags, conclusions) VALUES (20697, 'Улыбайся, ёпта!', 'Улыбайся,<br><span class="heighten">ёпта!</span>', '{life,for-him,for-her,business,love,friendship,health}', '{}');
 INSERT INTO fucking_great_advice.great_advice (id, text, html, tags, conclusions) VALUES (8878, 'Шли всех на хуй!', 'Шли<br>всех<br>на&nbsp;хуй!', '{life,gtd}', '{}');
@@ -345,7 +331,7 @@ INSERT INTO fucking_great_advice.great_advice (id, text, html, tags, conclusions
 INSERT INTO fucking_great_advice.great_advice (id, text, html, tags, conclusions) VALUES (21687, 'Равняйся на лучших, ёпта!', 'Равняйся<br>на&nbsp;лучших,<br><span class="heighten">ёпта!</span>', '{design,photo,marketing,music,tricks,life}', '{}');
 INSERT INTO fucking_great_advice.great_advice (id, text, html, tags, conclusions) VALUES (25991, 'Сначала скажи «Нет, блять!»', 'Сначала<br>скажи<br><span class="typo">«Нет, блять!»</span>', '{life,business,office,love,kids,money,friendship}', '{}');
 INSERT INTO fucking_great_advice.great_advice (id, text, html, tags, conclusions) VALUES (25894, 'Не унижай блять соперника!', 'Не унижай<br>блять<br>соперника!', '{life}', '{}');
-INSERT INTO fucking_great_advice.great_advice (id, text, html, tags, conclusions) VALUES (10498, 'Считай блять деньги!', 'Считай<br>блять<br>деньги!', '', '{}');
+INSERT INTO fucking_great_advice.great_advice (id, text, html, tags, conclusions) VALUES (10498, 'Считай блять деньги!', 'Считай<br>блять<br>деньги!', '{}', '{}');
 INSERT INTO fucking_great_advice.great_advice (id, text, html, tags, conclusions) VALUES (26214, 'Делай больше, пизди меньше!', 'Делай<br>больше,<br>пизди<br>меньше!', '{education,life,business,frontend,office,gtd,love,money,friendship}', '{}');
 INSERT INTO fucking_great_advice.great_advice (id, text, html, tags, conclusions) VALUES (25996, 'Соображай блять быстрее!', 'Соображай<br>блять<br>быстрее!', '{life,business,office,gtd,money}', '{}');
 INSERT INTO fucking_great_advice.great_advice (id, text, html, tags, conclusions) VALUES (9367, 'Сходи блять к зубному!', 'Сходи<br>блять<br>к&nbsp;зубному!', '{life}', '{}');
@@ -355,7 +341,7 @@ INSERT INTO fucking_great_advice.great_advice (id, text, html, tags, conclusions
 INSERT INTO fucking_great_advice.great_advice (id, text, html, tags, conclusions) VALUES (13318, 'Откладывай блять часть денег!', 'Откладывай<br>блять<br>часть<br>денег!', '{life,business,money}', '{}');
 INSERT INTO fucking_great_advice.great_advice (id, text, html, tags, conclusions) VALUES (137, 'Выбирай блять правильные инструменты!', 'Выбирай<br>блять<br>правильные<br>инструменты!', '{design,coding,markup,marketing,seo,music,medicine,business,gtd}', '{}');
 INSERT INTO fucking_great_advice.great_advice (id, text, html, tags, conclusions) VALUES (22197, 'Чувствуй блять ритм!', 'Чувствуй<br>блять<br>ритм!', '{design,markup,photo,music}', '{}');
-INSERT INTO fucking_great_advice.great_advice (id, text, html, tags, conclusions) VALUES (7248, 'Откладывай блять деньги!', 'Откладывай<br>блять<br>деньги!', '', '{}');
+INSERT INTO fucking_great_advice.great_advice (id, text, html, tags, conclusions) VALUES (7248, 'Откладывай блять деньги!', 'Откладывай<br>блять<br>деньги!', '{}', '{}');
 INSERT INTO fucking_great_advice.great_advice (id, text, html, tags, conclusions) VALUES (25858, 'Прислушайся блять к себе', 'Прислушайся<br>блять<br>к себе!', '{life,gtd}', '{}');
 INSERT INTO fucking_great_advice.great_advice (id, text, html, tags, conclusions) VALUES (26058, 'Ной меньше, блять, а дыши глубже!', 'Ной<br>меньше,<br>блять,<br>а дыши<br>глубже!', '{life,business,gtd,love,friendship,health}', '{}');
 INSERT INTO fucking_great_advice.great_advice (id, text, html, tags, conclusions) VALUES (26008, 'Будет ли это ебать тебя через год?', 'Будет ли<br>это ебать тебя<br>через год?', '{life,business,office,gtd,money}', '{}');
@@ -378,7 +364,7 @@ INSERT INTO fucking_great_advice.great_advice (id, text, html, tags, conclusions
 INSERT INTO fucking_great_advice.great_advice (id, text, html, tags, conclusions) VALUES (25946, 'Пользуйся блять возможностями!', 'Пользуйся<br>блять<br>возможностями!', '{life,business,gtd,love,friendship}', '{}');
 INSERT INTO fucking_great_advice.great_advice (id, text, html, tags, conclusions) VALUES (22837, 'Не страдай хуйнёй подолгу!', 'Не&nbsp;страдай<br><span class="heighten">хуйнёй<br>подолгу!</span>', '{education,life,for-him,for-her,gtd,love,kids,money,friendship}', '{}');
 INSERT INTO fucking_great_advice.great_advice (id, text, html, tags, conclusions) VALUES (23037, 'Держи себя в руках, блять!', 'Держи<br>себя<br>в&nbsp;руках,<br>блять!', '{love,friendship,health}', '{}');
-INSERT INTO fucking_great_advice.great_advice (id, text, html, tags, conclusions) VALUES (6968, 'Ищи блять идеи попроще!', 'Ищи<br>блять<br>идеи<br>попроще!', '', '{}');
+INSERT INTO fucking_great_advice.great_advice (id, text, html, tags, conclusions) VALUES (6968, 'Ищи блять идеи попроще!', 'Ищи<br>блять<br>идеи<br>попроще!', '{}', '{}');
 INSERT INTO fucking_great_advice.great_advice (id, text, html, tags, conclusions) VALUES (22367, 'Не спи блять до обеда!', 'Не&nbsp;спи<br>блять<br>до&nbsp;обеда!', '{education,life,gtd,money,friendship,travel,health}', '{}');
 INSERT INTO fucking_great_advice.great_advice (id, text, html, tags, conclusions) VALUES (22647, 'Убери блять будильник подальше!', 'Убери<br>блять<br>будильник<br>подальше!', '{life}', '{}');
 INSERT INTO fucking_great_advice.great_advice (id, text, html, tags, conclusions) VALUES (105, 'Найди блять себе хобби!', 'Найди<br>блять<br>себе<br>хобби!', '{life}', '{}');
@@ -418,7 +404,7 @@ INSERT INTO fucking_great_advice.great_advice (id, text, html, tags, conclusions
 INSERT INTO fucking_great_advice.great_advice (id, text, html, tags, conclusions) VALUES (25920, 'Не еби себе голову!', 'Не еби<br>себе<br>голову!', '{life,for-him,for-her,business,friendship}', '{}');
 INSERT INTO fucking_great_advice.great_advice (id, text, html, tags, conclusions) VALUES (2397, 'Выходи блять пораньше!', 'Выходи<br>блять<br>пораньше!', '{education}', '{}');
 INSERT INTO fucking_great_advice.great_advice (id, text, html, tags, conclusions) VALUES (26089, 'Умей блять выждать!', 'Умей<br>блять<br>выждать!', '{life,for-him,business,gtd,love,friendship}', '{}');
-INSERT INTO fucking_great_advice.great_advice (id, text, html, tags, conclusions) VALUES (9538, 'Сделай сам, блять!', 'Сделай<br>сам,<br>блять!', '', '{}');
+INSERT INTO fucking_great_advice.great_advice (id, text, html, tags, conclusions) VALUES (9538, 'Сделай сам, блять!', 'Сделай<br>сам,<br>блять!', '{}', '{}');
 INSERT INTO fucking_great_advice.great_advice (id, text, html, tags, conclusions) VALUES (17057, 'Растягивай блять удовольствие!', 'Растягивай<br>блять<br>удовольствие!', '{life,gtd,love,friendship,travel,health}', '{}');
 INSERT INTO fucking_great_advice.great_advice (id, text, html, tags, conclusions) VALUES (1148, 'Делай что любишь блять!', 'Делай<br>что<br>любишь<br>блять!', '{life,gtd}', '{}');
 INSERT INTO fucking_great_advice.great_advice (id, text, html, tags, conclusions) VALUES (13358, 'Не покупай хуйню!', 'Не&nbsp;покупай<br><span class="heighten">хуйню!</span>', '{driving,music,life,snowboard,money,pool}', '{}');
@@ -504,7 +490,7 @@ INSERT INTO fucking_great_advice.great_advice (id, text, html, tags, conclusions
 INSERT INTO fucking_great_advice.great_advice (id, text, html, tags, conclusions) VALUES (16647, 'Добивайся блять своего!', 'Добивайся<br>блять<br>своего!', '{life,business,gtd,love,kids,friendship,health}', '{}');
 INSERT INTO fucking_great_advice.great_advice (id, text, html, tags, conclusions) VALUES (26096, 'Хвали на людях, а критикуй, блять, наедине!', 'Хвали<br>на&nbsp;людях,<br>а&nbsp;критикуй,<br>блять,<br>наедине!', '{life,for-him,for-her,business,gtd,love,kids,friendship}', '{}');
 INSERT INTO fucking_great_advice.great_advice (id, text, html, tags, conclusions) VALUES (25874, 'Похуй, пусть смеются!', 'Похуй,<br>пусть<br>смеются!', '{life,business,office,gtd,friendship}', '{}');
-INSERT INTO fucking_great_advice.great_advice (id, text, html, tags, conclusions) VALUES (9317, 'Отложи блять телефон!', 'Отложи<br>блять<br>телефон!', '', '{}');
+INSERT INTO fucking_great_advice.great_advice (id, text, html, tags, conclusions) VALUES (9317, 'Отложи блять телефон!', 'Отложи<br>блять<br>телефон!', '{}', '{}');
 INSERT INTO fucking_great_advice.great_advice (id, text, html, tags, conclusions) VALUES (26035, 'Делай добро и не пизди об этом!', 'Делай<br>добро<br>и не&nbsp;пизди<br>об&nbsp;этом!', '{life,business,office,love,money,friendship}', '{}');
 INSERT INTO fucking_great_advice.great_advice (id, text, html, tags, conclusions) VALUES (7668, 'Смени блять обстановку!', 'Смени<br>блять<br>обстановку!', '{office,gtd,love,friendship,travel,health}', '{}');
 INSERT INTO fucking_great_advice.great_advice (id, text, html, tags, conclusions) VALUES (308, 'Не слушай блять тупых советов!', 'Не&nbsp;слушай<br>блять<br>тупых<br>советов!', '{design,coding,markup,photo,text,seo,medicine,life,business,gtd,money}', '{}');
@@ -516,7 +502,7 @@ INSERT INTO fucking_great_advice.great_advice (id, text, html, tags, conclusions
 INSERT INTO fucking_great_advice.great_advice (id, text, html, tags, conclusions) VALUES (26037, 'Не откусывай блять больше чем проглотишь!', 'Не откусывай<br>блять больше<br>чем проглотишь!', '{life,business,gtd,love,money,friendship}', '{}');
 INSERT INTO fucking_great_advice.great_advice (id, text, html, tags, conclusions) VALUES (26032, 'Работай пизже любого другого!', 'Работай<br>пизже<br>любого<br>другого!', '{life,business,office,gtd}', '{}');
 INSERT INTO fucking_great_advice.great_advice (id, text, html, tags, conclusions) VALUES (13368, 'Не пизди блять за глаза!', 'Не&nbsp;пизди<br>блять<br>за&nbsp;глаза!', '{life,office,love,friendship}', '{}');
-INSERT INTO fucking_great_advice.great_advice (id, text, html, tags, conclusions) VALUES (26362, 'Не верти блять календарь!', 'Не верти<br/>блять<br/>календарь!', '', '{}');
+INSERT INTO fucking_great_advice.great_advice (id, text, html, tags, conclusions) VALUES (26362, 'Не верти блять календарь!', 'Не верти<br/>блять<br/>календарь!', '{}', '{}');
 INSERT INTO fucking_great_advice.great_advice (id, text, html, tags, conclusions) VALUES (26064, 'Начни уже нормально питаться!', 'Начни уже<br>нормально<br>питаться!', '{life,business,office,health}', '{}');
 INSERT INTO fucking_great_advice.great_advice (id, text, html, tags, conclusions) VALUES (26148, 'Уважай блять чужой выбор!', 'Уважай<br>блять<br><span class="heighten">чужой<br>выбор!</span>', '{life,for-him,for-her,business,office,gtd,love,money,friendship}', '{}');
 INSERT INTO fucking_great_advice.great_advice (id, text, html, tags, conclusions) VALUES (26063, 'Упражняй блять мозги!', 'Упражняй<br>блять<br>мозги!', '{life,business,office,gtd,money,health}', '{}');
@@ -531,7 +517,7 @@ INSERT INTO fucking_great_advice.great_advice (id, text, html, tags, conclusions
 INSERT INTO fucking_great_advice.great_advice (id, text, html, tags, conclusions) VALUES (123, 'Увеличь шрифт, блять!', 'Увеличь<br>шрифт,<br>блять!', '{design,coding,markup,frontend}', '{}');
 INSERT INTO fucking_great_advice.great_advice (id, text, html, tags, conclusions) VALUES (25908, 'Предлагают помощь — принимай, ёпта!', 'Предлагают<br>помощь&nbsp;—<br>принимай,<br><span class="heighten">ёпта!</span>', '{life,business,office,gtd,friendship,health}', '{}');
 INSERT INTO fucking_great_advice.great_advice (id, text, html, tags, conclusions) VALUES (25950, 'Каждому, блять — своё!', 'Каждому,<br>блять&nbsp;—<br><span class="heighten">своё!</span>', '{life,business,gtd,love,friendship}', '{}');
-INSERT INTO fucking_great_advice.great_advice (id, text, html, tags, conclusions) VALUES (26361, 'Запишись уже блять к врачу!', 'Запишись<br>уже<br>блять<br>к врачу!', '', '{}');
+INSERT INTO fucking_great_advice.great_advice (id, text, html, tags, conclusions) VALUES (26361, 'Запишись уже блять к врачу!', 'Запишись<br>уже<br>блять<br>к врачу!', '{}', '{}');
 INSERT INTO fucking_great_advice.great_advice (id, text, html, tags, conclusions) VALUES (53, 'Отдыхай блять после каждого проекта!', 'Отдыхай<br>блять<br>после<br>каждого<br>проекта!', '{design,coding,life,business,frontend,office,gtd}', '{}');
 INSERT INTO fucking_great_advice.great_advice (id, text, html, tags, conclusions) VALUES (24637, 'Не усложняй, блять!', 'Не усложняй,<br>блять!', '{design,coding,music,frontend}', '{}');
 INSERT INTO fucking_great_advice.great_advice (id, text, html, tags, conclusions) VALUES (26140, 'Как тратишь время, так блять и живёшь', 'Как<br>тратишь<br>время,<br>так блять<br><span class="heighten">и живёшь</span>', '{life,business,gtd,money}', '{}');
@@ -563,7 +549,7 @@ INSERT INTO fucking_great_advice.great_advice (id, text, html, tags, conclusions
 INSERT INTO fucking_great_advice.great_advice (id, text, html, tags, conclusions) VALUES (26105, 'Носи блять удобную обувь!', 'Носи<br>блять<br>удобную<br>обувь!', '{life,for-her,health}', '{}');
 INSERT INTO fucking_great_advice.great_advice (id, text, html, tags, conclusions) VALUES (22957, 'Не пускай блять дела на самотек!', 'Не&nbsp;пускай<br>блять<br>дела<br>на&nbsp;самотек!', '{life,business,office,gtd,money}', '{}');
 INSERT INTO fucking_great_advice.great_advice (id, text, html, tags, conclusions) VALUES (18057, 'Старайся блять!', 'Старайся<br>блять!', '{design,coding,markup,education,life,frontend,office,gtd,translate,health}', '{}');
-INSERT INTO fucking_great_advice.great_advice (id, text, html, tags, conclusions) VALUES (17007, 'У тебя всё получится', 'У&nbsp;тебя всё<br>получится', '', '{"{\"id\":\"4\",\"text\":\"Да-да, именно у тебя\",\"html\":\"Да-да,\\u003cbr/\\u003eименно\\u003cbr/\\u003eу\\u0026nbsp;тебя\"}","{\"id\":\"5\",\"text\":\"Улыбнись и сделай первый шаг\",\"html\":\"Улыбнись\\u003cbr\\u003e\\u003cspan class\\u003d\\\"heighten\\\"\\u003eи\\u0026nbsp;сделай\\u003cbr\\u003e\\u003cspan class\\u003d\\\"heighten\\\"\\u003eпервый\\u003cbr\\u003eшаг\\u003c/span\\u003e\\u003c/span\\u003e\"}","{\"id\":\"6\",\"text\":\"Сегодня\",\"html\":\"Сегодня\"}","{\"id\":\"7\",\"text\":\"Если ты ждал знака свыше, это был он\",\"html\":\"Если ты ждал\\u003cbr\\u003eзнака свыше,\\u003cbr\\u003eэто был он\"}","{\"id\":\"8\",\"text\":\"Удачи\",\"html\":\"Удачи\"}"}');
+INSERT INTO fucking_great_advice.great_advice (id, text, html, tags, conclusions) VALUES (17007, 'У тебя всё получится', 'У&nbsp;тебя всё<br>получится', '{}', '{"{\"id\":\"4\",\"text\":\"Да-да, именно у тебя\",\"html\":\"Да-да,\\u003cbr/\\u003eименно\\u003cbr/\\u003eу\\u0026nbsp;тебя\"}","{\"id\":\"5\",\"text\":\"Улыбнись и сделай первый шаг\",\"html\":\"Улыбнись\\u003cbr\\u003e\\u003cspan class\\u003d\\\"heighten\\\"\\u003eи\\u0026nbsp;сделай\\u003cbr\\u003e\\u003cspan class\\u003d\\\"heighten\\\"\\u003eпервый\\u003cbr\\u003eшаг\\u003c/span\\u003e\\u003c/span\\u003e\"}","{\"id\":\"6\",\"text\":\"Сегодня\",\"html\":\"Сегодня\"}","{\"id\":\"7\",\"text\":\"Если ты ждал знака свыше, это был он\",\"html\":\"Если ты ждал\\u003cbr\\u003eзнака свыше,\\u003cbr\\u003eэто был он\"}","{\"id\":\"8\",\"text\":\"Удачи\",\"html\":\"Удачи\"}"}');
 INSERT INTO fucking_great_advice.great_advice (id, text, html, tags, conclusions) VALUES (7018, 'Разбери блять скачанное!', 'Разбери<br>блять<br>скачанное!', '{design,coding,education,life,frontend,office,gtd}', '{}');
 INSERT INTO fucking_great_advice.great_advice (id, text, html, tags, conclusions) VALUES (25911, 'Живи проще — будет пизже!', 'Живи<br><span class="dash">проще&nbsp;—</span><br>будет<br>пизже!', '{life,business,office,friendship}', '{}');
 INSERT INTO fucking_great_advice.great_advice (id, text, html, tags, conclusions) VALUES (7828, 'Решай блять сам!', 'Решай<br>блять<br>сам!', '{education,life,for-him,business,gtd,friendship,health}', '{}');
@@ -589,7 +575,7 @@ INSERT INTO fucking_great_advice.great_advice (id, text, html, tags, conclusions
 INSERT INTO fucking_great_advice.great_advice (id, text, html, tags, conclusions) VALUES (25974, 'Слушай блять много, — говори блять мало!', 'Слушай<br>блять<br><span class="dash">много,&nbsp;—</span><br>говори<br>блять<br>мало!', '{life,business,gtd}', '{}');
 INSERT INTO fucking_great_advice.great_advice (id, text, html, tags, conclusions) VALUES (13168, 'Изучил, блять — используй!', 'Изучил,<br>блять&nbsp;—<br>используй!', '{design,coding,markup,photo,education,life,frontend}', '{}');
 INSERT INTO fucking_great_advice.great_advice (id, text, html, tags, conclusions) VALUES (26055, 'Добавь блять «пожалуйста»!', 'Добавь<br>блять<br><span class="typo">«пожалуйста»!</span>', '{life,love,money,friendship}', '{}');
-INSERT INTO fucking_great_advice.great_advice (id, text, html, tags, conclusions) VALUES (26359, 'Поехали!', 'Поехали!', '', '{}');
+INSERT INTO fucking_great_advice.great_advice (id, text, html, tags, conclusions) VALUES (26359, 'Поехали!', 'Поехали!', '{}', '{}');
 INSERT INTO fucking_great_advice.great_advice (id, text, html, tags, conclusions) VALUES (26118, 'Не доёбывай мирного человека!', 'Не&nbsp;доёбывай<br>мирного<br>человека!', '{life,love,friendship}', '{}');
 INSERT INTO fucking_great_advice.great_advice (id, text, html, tags, conclusions) VALUES (38, 'Ошибайся, ёпта!', 'Ошибайся,<br><span class="heighten">ёпта!</span>', '{education,life,business}', '{}');
 INSERT INTO fucking_great_advice.great_advice (id, text, html, tags, conclusions) VALUES (26130, 'Находи блять свои слова!', 'Находи<br>блять<br>свои<br>слова!', '{text,music,tricks,life,for-him,love,kids,friendship,translate}', '{}');
@@ -657,7 +643,7 @@ INSERT INTO fucking_great_advice.great_advice (id, text, html, tags, conclusions
 INSERT INTO fucking_great_advice.great_advice (id, text, html, tags, conclusions) VALUES (9458, 'Помогай блять друзьям!', 'Помогай<br>блять<br>друзьям!', '{business,love,friendship}', '{}');
 INSERT INTO fucking_great_advice.great_advice (id, text, html, tags, conclusions) VALUES (21737, 'Не обещай блять лишнего!', 'Не&nbsp;обещай<br>блять<br>лишнего!', '{life,business,office,gtd,love,friendship}', '{}');
 INSERT INTO fucking_great_advice.great_advice (id, text, html, tags, conclusions) VALUES (23338, 'Просыпайся блять пораньше!', 'Просыпайся<br>блять<br>пораньше!', '{life,business,gtd,love,friendship}', '{}');
-INSERT INTO fucking_great_advice.great_advice (id, text, html, tags, conclusions) VALUES (24447, 'С новым блять годом!', 'С<br>новым<br>блять<br>годом!', '', '{}');
+INSERT INTO fucking_great_advice.great_advice (id, text, html, tags, conclusions) VALUES (24447, 'С новым блять годом!', 'С<br>новым<br>блять<br>годом!', '{}', '{}');
 INSERT INTO fucking_great_advice.great_advice (id, text, html, tags, conclusions) VALUES (25827, 'Не ищи блять оправданий!', 'Не ищи<br>блять<br>оправданий!', '{for-him,for-her,love,kids,friendship}', '{}');
 INSERT INTO fucking_great_advice.great_advice (id, text, html, tags, conclusions) VALUES (20267, 'Не пытайся блять всем угодить!', 'Не&nbsp;пытайся<br>блять<br>всем<br>угодить!', '{for-her,business,love,friendship}', '{}');
 INSERT INTO fucking_great_advice.great_advice (id, text, html, tags, conclusions) VALUES (17117, 'Никогда блять не сдавайся!', 'Никогда<br>блять<br>не&nbsp;сдавайся!', '{life,business,gtd,love,friendship,health}', '{}');
@@ -678,8 +664,8 @@ INSERT INTO fucking_great_advice.great_advice (id, text, html, tags, conclusions
 INSERT INTO fucking_great_advice.great_advice (id, text, html, tags, conclusions) VALUES (23508, 'Не сравнивай блять себя с другими!', 'Не&nbsp;сравнивай<br>блять<br>себя<br>с&nbsp;другими!', '{life,for-him,for-her,office,gtd,love,friendship,health}', '{}');
 INSERT INTO fucking_great_advice.great_advice (id, text, html, tags, conclusions) VALUES (22947, 'Научись блять рано вставать!', 'Научись<br>блять<br>рано<br>вставать!', '{office,gtd,kids,friendship,health}', '{}');
 INSERT INTO fucking_great_advice.great_advice (id, text, html, tags, conclusions) VALUES (23778, 'Сходи блять на пляж!', 'Сходи<br>блять<br>на&nbsp;пляж!', '{life}', '{}');
-INSERT INTO fucking_great_advice.great_advice (id, text, html, tags, conclusions) VALUES (19077, 'Не прыгай в лифте блядь!', 'Не<br>прыгай<br>в<br>лифте<br>блядь!', '', '{}');
-INSERT INTO fucking_great_advice.great_advice (id, text, html, tags, conclusions) VALUES (19067, '- Начал, блять, - доделай!', '-<br>Начал,<br>блять,<br>-<br>доделай!', '', '{}');
+INSERT INTO fucking_great_advice.great_advice (id, text, html, tags, conclusions) VALUES (19077, 'Не прыгай в лифте блядь!', 'Не<br>прыгай<br>в<br>лифте<br>блядь!', '{}', '{}');
+INSERT INTO fucking_great_advice.great_advice (id, text, html, tags, conclusions) VALUES (19067, '- Начал, блять, - доделай!', '-<br>Начал,<br>блять,<br>-<br>доделай!', '{}', '{}');
 INSERT INTO fucking_great_advice.great_advice (id, text, html, tags, conclusions) VALUES (22227, 'Не трать блять время попусту!', 'Не&nbsp;трать<br>блять<br>время<br>попусту!', '{life,business,gtd,love,money,travel,health}', '{}');
 INSERT INTO fucking_great_advice.great_advice (id, text, html, tags, conclusions) VALUES (23007, 'Закипело — кидай, всплыли — вытаскивай!', 'Закипело&nbsp;—<br><span class="heighten">кидай,<br>всплыли&nbsp;—<br>вытаскивай!</span>', '{education,for-him}', '{}');
 INSERT INTO fucking_great_advice.great_advice (id, text, html, tags, conclusions) VALUES (22967, 'Береги печень смолоду, ёпта!', 'Береги<br>печень<br>смолоду,<br><span class="heighten">ёпта!</span>', '{music,education,life}', '{}');
@@ -719,7 +705,7 @@ INSERT INTO fucking_great_advice.great_advice (id, text, html, tags, conclusions
 INSERT INTO fucking_great_advice.great_advice (id, text, html, tags, conclusions) VALUES (18197, 'Побудь блять один какое-то время!', 'Побудь<br>блять<br>один<br>какое-то<br>время!', '{life,gtd,love,friendship,health}', '{}');
 INSERT INTO fucking_great_advice.great_advice (id, text, html, tags, conclusions) VALUES (18067, 'Ищи блять нестандартные решения!', 'Ищи блять<br>нестандартные<br>решения!', '{design,coding,education,life,business,frontend,gtd,money}', '{}');
 INSERT INTO fucking_great_advice.great_advice (id, text, html, tags, conclusions) VALUES (18047, 'Включи блять воображение!', 'Включи<br>блять<br>воображение!', '{design,photo,text,marketing,music,tricks,life,business,kids,pool}', '{}');
-INSERT INTO fucking_great_advice.great_advice (id, text, html, tags, conclusions) VALUES (5738, 'Стреляй зомби в голову', 'Стреляй<br>зомби<br>в&nbsp;голову', '', '{}');
+INSERT INTO fucking_great_advice.great_advice (id, text, html, tags, conclusions) VALUES (5738, 'Стреляй зомби в голову', 'Стреляй<br>зомби<br>в&nbsp;голову', '{}', '{}');
 INSERT INTO fucking_great_advice.great_advice (id, text, html, tags, conclusions) VALUES (17837, 'Одевайся блять теплее!', 'Одевайся<br>блять<br>теплее!', '{for-him,for-her,health}', '{}');
 INSERT INTO fucking_great_advice.great_advice (id, text, html, tags, conclusions) VALUES (10348, 'Не мешай блять красное с белым!', 'Не&nbsp;мешай<br>блять<br>красное<br>с&nbsp;белым!', '{music,medicine,education,life,health}', '{}');
 INSERT INTO fucking_great_advice.great_advice (id, text, html, tags, conclusions) VALUES (7298, 'Не суди бля по себе!', 'Не&nbsp;суди<br>бля<br>по&nbsp;себе!', '{marketing,music,life,for-him,for-her,business,love,friendship}', '{}');
@@ -800,7 +786,7 @@ INSERT INTO fucking_great_advice.great_advice (id, text, html, tags, conclusions
 INSERT INTO fucking_great_advice.great_advice (id, text, html, tags, conclusions) VALUES (8318, 'Стремись блять к качеству!', 'Стремись<br>блять<br>к&nbsp;качеству!', '{design,coding,photo,music,life,business}', '{}');
 INSERT INTO fucking_great_advice.great_advice (id, text, html, tags, conclusions) VALUES (8338, 'Не заглядывай блять в чужие мониторы!', 'Не&nbsp;заглядывай<br>блять<br>в&nbsp;чужие<br>мониторы!', '{design,coding,markup,text,education,life,business,office,friendship}', '{}');
 INSERT INTO fucking_great_advice.great_advice (id, text, html, tags, conclusions) VALUES (7088, 'Найми блять помощника!', 'Найми<br>блять<br>помощника!', '{design,coding,markup,text,marketing,life,business,frontend,gtd}', '{}');
-INSERT INTO fucking_great_advice.great_advice (id, text, html, tags, conclusions) VALUES (5678, 'Гордись нашей историей!', 'Гордись<br>нашей<br>историей!', '', '{}');
+INSERT INTO fucking_great_advice.great_advice (id, text, html, tags, conclusions) VALUES (5678, 'Гордись нашей историей!', 'Гордись<br>нашей<br>историей!', '{}', '{}');
 INSERT INTO fucking_great_advice.great_advice (id, text, html, tags, conclusions) VALUES (6998, 'Выключи блять компьютер!', 'Выключи<br>блять<br>компьютер!', '{design,coding,music,education,life,business,frontend,gtd,health}', '{}');
 INSERT INTO fucking_great_advice.great_advice (id, text, html, tags, conclusions) VALUES (6808, 'Не лезь блять с советом!', 'Не&nbsp;лезь<br>блять<br>с&nbsp;советом!', '{life,for-him,for-her,business,love,friendship,health}', '{}');
 INSERT INTO fucking_great_advice.great_advice (id, text, html, tags, conclusions) VALUES (6738, 'Добавь блять оперативки!', 'Добавь<br>блять<br>оперативки!', '{design,coding,markup,photo,education,life,frontend,gtd}', '{}');
@@ -819,7 +805,7 @@ INSERT INTO fucking_great_advice.great_advice (id, text, html, tags, conclusions
 INSERT INTO fucking_great_advice.great_advice (id, text, html, tags, conclusions) VALUES (4687, 'Не считай блять чужие деньги!', 'Не&nbsp;считай<br>блять<br>чужие<br>деньги!', '{marketing,life,for-her,office,love,friendship}', '{}');
 INSERT INTO fucking_great_advice.great_advice (id, text, html, tags, conclusions) VALUES (5228, 'Делай блять дубликат слоя!', 'Делай<br>блять<br>дубликат<br>слоя!', '{design}', '{}');
 INSERT INTO fucking_great_advice.great_advice (id, text, html, tags, conclusions) VALUES (5238, 'Выслушай блять проектировщика!', 'Выслушай<br>блять<br>проектировщика!', '{design,coding,markup,frontend}', '{}');
-INSERT INTO fucking_great_advice.great_advice (id, text, html, tags, conclusions) VALUES (5198, 'Переведи блять часы!', 'Переведи<br>блять<br>часы!', '', '{}');
+INSERT INTO fucking_great_advice.great_advice (id, text, html, tags, conclusions) VALUES (5198, 'Переведи блять часы!', 'Переведи<br>блять<br>часы!', '{}', '{}');
 INSERT INTO fucking_great_advice.great_advice (id, text, html, tags, conclusions) VALUES (5208, 'Говори блять только за себя!', 'Говори<br>блять<br>только<br>за&nbsp;себя!', '{education,life,for-him,for-her,business,love,friendship}', '{}');
 INSERT INTO fucking_great_advice.great_advice (id, text, html, tags, conclusions) VALUES (5188, 'Разбери блять старые фотки!', 'Разбери<br>блять<br>старые<br>фотки!', '{design,photo,music,education,life,for-him,for-her,love,friendship,travel}', '{}');
 INSERT INTO fucking_great_advice.great_advice (id, text, html, tags, conclusions) VALUES (4697, 'Не жалей блять об упущенном!', 'Не&nbsp;жалей<br>блять<br>об&nbsp;упущенном!', '{photo,music,life,gtd,love,kids,friendship}', '{}');

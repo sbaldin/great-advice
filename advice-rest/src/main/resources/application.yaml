@@ -3,9 +3,6 @@ datasource:
   driver: "org.postgresql.Driver"
   user: "postgres"
   password: "passw0rd"
-  schema:
-    createOnStartup: "true"
-    ddlScript: "schema-postgresql.sql"
 
 
 

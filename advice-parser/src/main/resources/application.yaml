@@ -5,7 +5,10 @@ datasource:
   password: "passw0rd"
   schema:
     createOnStartup: "true"
+    populateSchema: "true"
     ddlScript: "schema-postgresql.sql"
+    dataScript: "postgres_fucking_great_advice_great_advice.sql"
+
 
 
 

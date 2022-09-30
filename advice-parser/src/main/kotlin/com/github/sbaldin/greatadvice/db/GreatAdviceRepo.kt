@@ -1,16 +1,16 @@
 package com.github.sbaldin.greatadvice.db
 
-import com.github.sbaldin.greatadvice.Application
 import com.github.sbaldin.greatadvice.domain.DatabaseConfig
 import com.github.sbaldin.greatadvice.domain.GreatAdvice
 import com.github.sbaldin.greatadvice.domain.GreatAdviceConclusion
-import com.github.sbaldin.greatadvice.readDBConf
 import com.google.gson.GsonBuilder
 import org.jetbrains.exposed.sql.*
-import org.jetbrains.exposed.sql.statements.InsertStatement
 import org.jetbrains.exposed.sql.transactions.transaction
+import org.postgresql.util.PSQLException
 import org.slf4j.Logger
 import org.slf4j.LoggerFactory
+import java.io.File
+import java.io.FileReader
 
 val log: Logger = LoggerFactory.getLogger(GreatAdviceRepo::class.java)
 
@@ -32,20 +32,41 @@ class GreatAdviceRepo(
     }
 
     fun initialize() {
-        if(isInitialized){
+        if (isInitialized) {
             log.info("Initialization is already done.")
             return
         }
         if (conf.schema.createOnStartup) {
-            val ddlScript = conf.schema.ddlScript.let {
+            val ddlScriptPath = conf.schema.ddlScript.let {
                 if (it.isNotEmpty()) it else "schema-postgresql.sql"
             }
 
-            val ddl = this.javaClass.classLoader.getResource(ddlScript)!!.readText()
+            val ddl = this.javaClass.classLoader.getResource(ddlScriptPath)!!.readText()
             transaction(db) {
                 log.info("Create On Startup enabled. Will create schema.")
-                log.info("Following script will be executed:\n $ddl")
+                log.info("Following script will be executed:\n $ddlScriptPath")
                 exec(ddl)
+            }
+
+            if (conf.schema.populateSchema) {
+                val dataScriptPath = conf.schema.dataScript.let {
+                    if (it.isNotEmpty()) it else "postgres_fucking_great_advice_great_advice.sql"
+                }
+
+                val data = this.javaClass.classLoader.getResource(dataScriptPath)!!.run {
+                    FileReader(File(this.toURI())).readLines()
+                }
+                transaction(db) {
+                    log.info("Populate schema is enabled. Data will be written to tables.")
+                    log.info("Following script will be executed:\n $dataScriptPath")
+                    data.forEach { insertLine ->
+                        try {
+                            exec(insertLine)
+                        } catch (ex: PSQLException) {
+                            log.error("Trying to execute: \n $insertLine \n But error has been occurred!", ex)
+                        }
+                    }
+                }
             }
         } else {
             log.info("Initialization on startup is disabled in config. See application.yaml.")
