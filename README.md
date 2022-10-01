@@ -28,3 +28,12 @@ docker run -itd -e POSTGRES_USER=postgres -e POSTGRES_PASSWORD=passw0rd -p 5432:
 
 The above command uses environment variables POSTGRES_USER and POSTGRES_PASSWORD to set the username and password for the PostgreSQL database. By default, the PostgreSQL database runs on the 5432 port. We exposed the 5432 port on the host using the “-p 5432:5432” in the docker run command.
 To back up the data, we also mounted the /var/lib/postgresql/data directory to the /data directory of the host machine of the postgres container.
+
+
+## Health check
+Spring Boot provides several such services (such as health, audits, beans, and more) with its [actuator module](https://docs.spring.io/spring-boot/docs/2.5.0/reference/htmlsingle/#production-ready).
+
+The actuator exposes the following endpoints:
+* actuator/health
+* actuator
+
