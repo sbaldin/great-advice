@@ -1,11 +1,34 @@
-datasource:
-  url: "jdbc:postgresql://localhost:5432/postgres?currentSchema=fucking_great_advice"
-  driver: "org.postgresql.Driver"
-  user: "postgres"
-  password: "passw0rd"
+spring:
+  datasource:
+    url: "jdbc:postgresql://localhost:5432/postgres?currentSchema=fucking_great_advice"
+    driverClassName: "org.postgresql.Driver"
+    username: "postgres"
+    password: "passw0rd"
+    hikari:
+      connectionTimeout: '20000'
+      maximumPoolSize: '5'
+  jpa:
+    hibernate:
+      ddl-auto: none
 
-
-
+# Database Properties
+#spring:
+#  jpa:
+#    properties:
+#      # Hibernate Properties
+#      # The SQL dialect makes Hibernate generate better SQL for the chosen database
+#      hibernate:
+#        dialect: "org.hibernate.dialect.PostgreSQL92Dialect"
+#
+#        # Hibernate ddl auto (create, create-drop, validate, update)
+#        ddl_auto: "none"
+#        default_schema: "fucking_great_advice"
+#        url: "jdbc:postgresql://localhost:5432/postgres?currentSchema=fucking_great_advice"
+#        driverClassName: "org.postgresql.Driver"
+#        username: "postgres"
+#        password: "passw0rd"
+#    database: postgresql
+#    show-sql: true
 
 
 

@@ -10,7 +10,6 @@ import java.time.ZonedDateTime
 import javax.annotation.PostConstruct
 
 @RestController
-@RequestMapping(path = ["/health"], produces = ["application/json"])
 class HealthCheckController {
 
     lateinit var initTimestamp: ZonedDateTime

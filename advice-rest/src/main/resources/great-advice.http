@@ -1,0 +1,91 @@
+#health check
+GET http://localhost:8080/actuator/health
+Accept: application/json
+
+#{
+#  "status": "UP"
+#}
+
+###
+
+#service status
+GET http://localhost:8080/actuator
+Accept: application/json
+
+# You don't need it :)
+
+###
+
+# random advice
+GET http://localhost:8080/api/v1/advice/random
+Accept: application/json
+
+#{
+#  "id": 19257,
+#  "text": "Не опускай блять руки!",
+#  "html": "Не&nbsp;опускай<br>блять<br>руки!",
+#  "tags": [
+#    "life",
+#    "business",
+#    "gtd",
+#    "love",
+#    "kids",
+#    "friendship",
+#    "health"
+#  ],
+#  "conclusions": "{}"
+#}
+
+###
+
+#advice by id
+
+GET http://localhost:8080/api/v1/advice/12698
+Accept: application/json
+
+# the same as prev
+
+###
+
+GET http://localhost:8080/api/v1/advice?tags=life,seo&pageSize=5
+Accept: application/json
+
+# the same as prev
+
+###
+
+GET http://localhost:8080/api/v1/tags
+Accept: application/json
+
+[
+  "seo",
+  "health",
+  "life",
+  "pool",
+  "for-him",
+  "translate",
+  "photo",
+  "business",
+  "office",
+  "marketing",
+  "kids",
+  "education",
+  "friendship",
+  "coding",
+  "design",
+  "gtd",
+  "text",
+  "music",
+  "markup",
+  "medicine",
+  "newyear",
+  "love",
+  "driving",
+  "frontend",
+  "dentist",
+  "travel",
+  "money",
+  "snowboard",
+  "for-her",
+  "tricks"
+]
