@@ -7,7 +7,6 @@ data class GreatAdviceResponse(
 )
 
 
-//@NoArg
 data class GreatAdvice constructor(
     val id: String,
     val text: String,
