@@ -1,4 +1,6 @@
 rootProject.name = "advice"
 //it spend a hour to resolve dep of ai module be aware
-//include("advice-ai", "advice-parser", "advice-core", "advice-rest")
-include("advice-parser", "advice-core", "advice-rest", "advice-grpc")
+//include("advice-ai")
+// Add advice rest to use spring way to start rest service
+//include("advice-rest")
+include("advice-parser", "advice-core", "advice-db", "advice-grpc")
