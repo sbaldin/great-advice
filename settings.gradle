@@ -1,4 +1,4 @@
 rootProject.name = "advice"
 //it spend a hour to resolve dep of ai module be aware
 //include("advice-ai", "advice-parser", "advice-core", "advice-rest")
-include("advice-parser", "advice-core", "advice-rest")
+include("advice-parser", "advice-core", "advice-rest", "advice-grpc")

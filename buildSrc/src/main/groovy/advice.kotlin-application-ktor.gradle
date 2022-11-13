@@ -1,0 +1,48 @@
+plugins {
+    id 'advice.kotlin-common-conventions'
+    id 'org.jetbrains.kotlin.jvm'
+    id 'io.ktor.plugin'
+}
+
+
+repositories {
+    // Use JCenter for resolving dependencies.
+    mavenCentral()
+}
+
+dependencies {
+    // Align versions of all Kotlin components
+    implementation platform('org.jetbrains.kotlin:kotlin-bom')
+
+
+    // Use the Kotlin JDK 8 standard library.
+    implementation 'org.jetbrains.kotlin:kotlin-stdlib-jdk8'
+
+
+    implementation project(':advice-core')
+    implementation "io.ktor:ktor-server-core-jvm:2.1.3"
+    implementation "io.ktor:ktor-server-netty-jvm:2.1.3"
+    implementation "ch.qos.logback:logback-classic:1.4.4"
+    testImplementation "io.ktor:ktor-server-tests-jvm:2.1.3"
+    testImplementation "org.jetbrains.kotlin:kotlin-test-junit:1.7.20"
+
+
+    implementation("com.uchuhimo:konf-core:0.20.0")
+    implementation("com.uchuhimo:konf-yaml:0.20.0")
+
+    implementation("org.postgresql:postgresql:42.2.16")
+
+    //implementation group: 'log4j', name: 'log4j', version: '1.2.17'
+    //implementation("org.slf4j:slf4j-api:1.7.25")
+    //implementation("org.slf4j:slf4j-log4j12:1.7.25")
+}
+
+compileKotlin {
+    kotlinOptions.jvmTarget = "1.8"
+}
+compileTestKotlin {
+    kotlinOptions.jvmTarget = "1.8"
+}
+
+//workaround for issue Task 'prepareKotlinBuildScriptModel' not found in project ':advice-grpc'.
+tasks.register("prepareKotlinBuildScriptModel"){}

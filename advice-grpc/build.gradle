@@ -1,0 +1,24 @@
+plugins {
+    id 'advice.kotlin-application-conventions'
+    id 'advice.kotlin-application-ktor'
+}
+
+group "com.github.sbaldin"
+version "0.0.1"
+mainClassName = "com.github.sbaldin.greatadvice.ApplicationKt"
+
+def isDevelopment = project.ext.has("development")
+applicationDefaultJvmArgs = ["-Dio.ktor.development=$isDevelopment"]
+
+repositories {
+    mavenCentral()
+}
+
+dependencies {
+    testImplementation "io.ktor:ktor-server-tests-jvm:2.1.3"
+    testImplementation "org.jetbrains.kotlin:kotlin-test-junit:1.7.20"
+}
+
+test {
+    useJUnitPlatform()
+}
