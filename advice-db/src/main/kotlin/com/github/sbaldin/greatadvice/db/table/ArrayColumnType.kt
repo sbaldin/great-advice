@@ -1,5 +1,6 @@
 package com.github.sbaldin.greatadvice.db
 
+import com.github.sbaldin.greatadvice.db.repo.log
 import com.github.sbaldin.greatadvice.domain.GreatAdvice
 import org.jetbrains.exposed.sql.*
 import org.jetbrains.exposed.sql.statements.jdbc.JdbcConnectionImpl

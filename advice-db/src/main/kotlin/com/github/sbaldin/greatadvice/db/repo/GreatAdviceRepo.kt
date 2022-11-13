@@ -1,6 +1,7 @@
-package com.github.sbaldin.greatadvice.db
+package com.github.sbaldin.greatadvice.db.repo
 
-import com.github.sbaldin.greatadvice.domain.DatabaseConfig
+import com.github.sbaldin.greatadvice.db.table.GreatAdviceTable
+import com.github.sbaldin.greatadvice.db.config.DatabaseConfig
 import com.github.sbaldin.greatadvice.domain.GreatAdvice
 import com.github.sbaldin.greatadvice.domain.GreatAdviceConclusion
 import com.google.gson.GsonBuilder
@@ -25,6 +26,7 @@ class GreatAdviceRepo(
             Database.connect(url = url, driver = driver, user = user, password = password)
         }
     }
+
     private val gson by lazy {
         GsonBuilder()
             .setLenient()
@@ -137,12 +139,3 @@ class GreatAdviceRepo(
 }
 
 
-object GreatAdviceTable : Table("great_advice") {
-    val id = long("id").autoIncrement("great_advice_id_seq")
-    val text = varchar("text", 200)
-    val html = varchar("html", 500)
-    val tags = array<String>("tags", VarCharColumnType(50))
-    val conclusions = array<String>("conclusions", VarCharColumnType(500))
-
-    override val primaryKey = PrimaryKey(id, name = "great_advice_pkey")
-}

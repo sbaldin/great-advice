@@ -1,4 +1,4 @@
-package com.github.sbaldin.greatadvice.domain
+package com.github.sbaldin.greatadvice.db.config
 
 data class DatabaseConfig(
     val url: String,
