@@ -1,6 +1,7 @@
 plugins {
     id 'advice.kotlin-common-conventions'
+    id 'advice.kotlin-common-serialization'
 }
 
 group = "com.github.sbaldin"
-version = "0.2"
+version = "0.3"
