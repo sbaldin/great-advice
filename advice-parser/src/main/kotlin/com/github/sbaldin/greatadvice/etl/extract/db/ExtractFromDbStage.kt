@@ -1,14 +1,12 @@
 package com.github.sbaldin.greatadvice.etl.extract.db
 
-import com.github.sbaldin.greatadvice.db.GreatAdviceRepo
+import com.github.sbaldin.greatadvice.db.repo.GreatAdviceRepo
 import com.github.sbaldin.greatadvice.domain.GreatAdvice
 import com.github.sbaldin.greatadvice.etl.FirstStage
-import com.github.sbaldin.greatadvice.etl.LastStage
 import com.github.sbaldin.greatadvice.etl.transform.DownloadAdviceResult
 import org.apache.commons.logging.Log
 import org.apache.commons.logging.LogFactory
 
-private val log: Log = LogFactory.getLog(ExtractFromDbStage::class.java)
 
 class ExtractFromDbStage(val repo: GreatAdviceRepo) : FirstStage<DownloadAdviceResult> {
 

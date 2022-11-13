@@ -1,6 +1,6 @@
 package com.github.sbaldin.greatadvice.etl
 
-import com.github.sbaldin.greatadvice.db.GreatAdviceRepo
+import com.github.sbaldin.greatadvice.db.repo.GreatAdviceRepo
 import com.github.sbaldin.greatadvice.etl.extract.db.ExtractFromDbStage
 import com.github.sbaldin.greatadvice.etl.extract.vk.ExtractAdviceUrlStage
 import com.github.sbaldin.greatadvice.etl.extract.vk.VkAdviceUrlExtractor

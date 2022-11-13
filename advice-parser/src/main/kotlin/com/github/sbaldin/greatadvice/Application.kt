@@ -1,7 +1,7 @@
 package com.github.sbaldin.greatadvice
 
-import com.github.sbaldin.greatadvice.db.GreatAdviceRepo
-import com.github.sbaldin.greatadvice.domain.DatabaseConfig
+import com.github.sbaldin.greatadvice.db.config.DatabaseConfig
+import com.github.sbaldin.greatadvice.db.repo.GreatAdviceRepo
 import com.github.sbaldin.greatadvice.etl.CsvExtractor
 import com.github.sbaldin.greatadvice.etl.EtlRunner
 import com.github.sbaldin.greatadvice.etl.extract.site.GreatAdviceIterator

@@ -1,6 +1,6 @@
 package com.github.sbaldin.greatadvice.etl.load
 
-import com.github.sbaldin.greatadvice.db.GreatAdviceRepo
+import com.github.sbaldin.greatadvice.db.repo.GreatAdviceRepo
 import com.github.sbaldin.greatadvice.etl.LastStage
 import com.github.sbaldin.greatadvice.etl.transform.DownloadAdviceResult
 import org.apache.commons.logging.Log
