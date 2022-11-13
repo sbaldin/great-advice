@@ -15,6 +15,7 @@ repositories {
 }
 
 dependencies {
+    implementation project(':advice-core')
     testImplementation "io.ktor:ktor-server-tests-jvm:2.1.3"
     testImplementation "org.jetbrains.kotlin:kotlin-test-junit:1.7.20"
 }
