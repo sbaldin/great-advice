@@ -1,0 +1,24 @@
+plugins {
+    id "org.jetbrains.kotlin.plugin.serialization"
+    id 'org.jetbrains.kotlin.jvm'
+}
+
+
+repositories {
+    // Use JCenter for resolving dependencies.
+    mavenCentral()
+}
+
+dependencies {
+    // Align versions of all Kotlin components
+    implementation platform('org.jetbrains.kotlin:kotlin-bom')
+    // Use the Kotlin JDK 8 standard library.
+    implementation 'org.jetbrains.kotlin:kotlin-stdlib-jdk8'
+
+    implementation "io.ktor:ktor-server-content-negotiation:2.1.3"
+    implementation "io.ktor:ktor-serialization-kotlinx-json:2.1.3"
+
+}
+
+//workaround for issue Task 'prepareKotlinBuildScriptModel' not found in project ':advice-grpc'.
+tasks.register("prepareKotlinBuildScriptModel"){}
