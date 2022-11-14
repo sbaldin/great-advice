@@ -25,7 +25,8 @@ You can run following Gradle command to start gather:
 We use postgres to make CRUD operations on advice objects. Here is docker run command to start postgres-db:
 
 ```shell
-docker run -itd -e POSTGRES_USER=postgres -e POSTGRES_PASSWORD=passw0rd -p 5432:5432 -v /data:/var/lib/postgresql/data --name postgresql_advice postgres
+export PATH_TO_YOUR_POSTGRES_FOLDER=/var/lib/postgresql/data
+docker run -itd -e POSTGRES_USER=postgres -e POSTGRES_PASSWORD=passw0rd -p 5432:5432 -v $PATH_TO_YOUR_POSTGRES_FOLDER:/var/lib/postgresql/data --name postgresql_advice postgres
 ```
 
 The above command uses environment variables POSTGRES_USER and POSTGRES_PASSWORD to set the username and password for the PostgreSQL database. By default, the PostgreSQL database runs on the 5432 port. We exposed the 5432 port on the host using the “-p 5432:5432” in the docker run command.

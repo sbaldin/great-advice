@@ -11,7 +11,8 @@ import org.jetbrains.exposed.sql.transactions.TransactionManager
  * @see  <a href="https://github.com/JetBrains/Exposed/issues/150">git issues</a>
  * @author MrPowerGamerBR
  */
-fun <T> Table.array(name: String, columnType: ColumnType): Column<Array<T>> = registerColumn(name, ArrayColumnType(columnType))
+fun <T> Table.array(name: String, columnType: ColumnType): Column<Array<T>> =
+    registerColumn(name, ArrayColumnType(columnType))
 
 class ArrayColumnType(private val type: ColumnType) : ColumnType() {
 
@@ -40,11 +41,10 @@ class ArrayColumnType(private val type: ColumnType) : ColumnType() {
             return value
         }
         if (value == emptyArrayStub) {
-            when(type){
+            when (type) {
                 is LongColumnType -> return arrayOf<Long>()
                 is TextColumnType -> return arrayOf<String>()
-                is StringColumnType ->  return arrayOf<String>()
-                is StringColumnType ->  return arrayOf<String>()
+                is StringColumnType -> return arrayOf<String>()
             }
         }
         log.warn("Array does not support for this database")
@@ -84,13 +84,32 @@ class AnyOp(val expr1: Expression<*>, val expr2: Expression<*>) : Op<Boolean>() 
     }
 }
 
-class ContainsOp(expr1: Expression<*>, expr2: Expression<*>) : ComparisonOp(expr1, expr2, "@>")
+class ContainsOp(expr1: Expression<*>, expr2: Expression<*>) : ComparisonOp(expr1, expr2, "@>") {
 
-infix fun<T, S> ExpressionWithColumnType<T>.any(t: S) : Op<Boolean> {
+    //serialize to ga.tags @> string_to_array(:tags, ',')
+    override fun toQueryBuilder(queryBuilder: QueryBuilder) {
+        with(queryBuilder) {
+            append(expr1)
+
+            append(" ", opSign, " ")
+
+            if (expr2 is QueryParameter) {
+                val array = expr2 as QueryParameter<Array<*>>
+                //how to handle it with sql query parameter :tags ?
+                append("string_to_array", "(", "'", array.value.joinToString(), "'", ",", "','", ")")
+            } else {
+                append(expr2)
+            }
+        }
+    }
+}
+
+infix fun <T, S> ExpressionWithColumnType<T>.any(t: S): Op<Boolean> {
     if (t == null) {
         return IsNullOp(this)
     }
     return AnyOp(this, QueryParameter(t, columnType))
 }
 
-infix fun<T, S> ExpressionWithColumnType<T>.contains(arry: Array<in S>) : Op<Boolean> = ContainsOp(this, QueryParameter(arry, columnType))
+infix fun <T, S> ExpressionWithColumnType<T>.contains(array: Array<in S>): Op<Boolean> =
+    ContainsOp(this, QueryParameter(array, columnType))

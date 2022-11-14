@@ -12,8 +12,8 @@ version = "0.1"
 dependencies {
     implementation project(':advice-core')
 
-    implementation("org.jetbrains.exposed:exposed-core:0.40.1")
-    implementation("org.jetbrains.exposed:exposed-jdbc:0.40.1")
+    api("org.jetbrains.exposed:exposed-core:0.40.1")
+    api("org.jetbrains.exposed:exposed-jdbc:0.40.1")
     implementation("org.postgresql:postgresql:42.2.16")
 
     //for inner json field parsing, consider moving to kotlin-serialization-json

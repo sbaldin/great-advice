@@ -1,11 +1,11 @@
 package com.github.sbaldin.greatadvice
 
+import com.github.sbaldin.greatadvice.grpc.plugins.configureRouting
 import io.ktor.http.*
 import io.ktor.client.request.*
 import io.ktor.client.statement.*
 import kotlin.test.*
 import io.ktor.server.testing.*
-import com.github.sbaldin.greatadvice.plugins.*
 
 class ApplicationTest {
     @Test

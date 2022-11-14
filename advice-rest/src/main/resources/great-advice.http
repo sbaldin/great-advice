@@ -8,7 +8,7 @@ Accept: application/json
 
 ###
 #health check
-GET http://localhost:8080/actuator/health
+GET http://localhost:8081/actuator/health
 Accept: application/json
 
 #{
@@ -18,7 +18,7 @@ Accept: application/json
 ###
 
 #service status
-GET http://localhost:8080/actuator
+GET http://localhost:8081/actuator
 Accept: application/json
 
 # You don't need it :)
@@ -49,7 +49,7 @@ Accept: application/json
 
 #advice by id
 
-GET http://localhost:8080/api/v1/advice/12698
+GET http://localhost:8081/api/v1/advice/12698
 Accept: application/json
 
 # the same as prev
@@ -63,7 +63,7 @@ Accept: application/json
 
 ###
 
-GET http://localhost:8080/api/v1/tags
+GET http://localhost:8081/api/v1/tags
 Accept: application/json
 
 [

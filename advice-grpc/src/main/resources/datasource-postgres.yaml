@@ -1,0 +1,18 @@
+datasource:
+  url: "jdbc:postgresql://localhost:5432/postgres?currentSchema=fucking_great_advice"
+  driver: "org.postgresql.Driver"
+  user: "postgres"
+  password: "passw0rd"
+  schema:
+    createOnStartup: "true"
+    populateSchema: "true"
+    ddlScript: "schema-postgresql.sql"
+    dataScript: "postgres_great_advice_great_advice.sql"
+
+
+
+
+
+
+
+
