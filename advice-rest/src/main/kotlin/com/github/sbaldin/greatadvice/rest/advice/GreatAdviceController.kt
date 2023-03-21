@@ -22,10 +22,10 @@ class GreatAdviceController(
 
     @GetMapping("")
     fun replaceEmployee(
-        @RequestParam("tags") tags: List<String>,
+        @RequestParam("tags") tags: List<String>?,
         @RequestParam("page", required = false) page: Int?,
         @RequestParam("pagSize", required = false) pagSize: Int?
-    ): Iterable<GreatAdviceDTO> = service.findAllByTag(tags, page ?: 1, pagSize ?: 20)
+    ): Iterable<GreatAdviceDTO> = service.findAllByTag(tags ?: emptyList(), page ?: 1, pagSize ?: 20)
 }
 
 class AdviceNotFoundException(val id: Long) : RuntimeException("There are no advice with such id=$id!")

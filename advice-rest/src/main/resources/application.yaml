@@ -10,6 +10,23 @@ spring:
   jpa:
     hibernate:
       ddl-auto: none
+#actuator settings
+Management:
+  server:
+    port: 8080
+  endpoints:
+    web:
+      exposure:
+        include: health,prometheus
+  metrics:
+    export:
+      prometheus:
+        enabled: true
+    distribution:
+      percentiles-histogram:
+        "[http.server.requests]": true
+
+
 
 # Database Properties
 #spring:
